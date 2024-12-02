@@ -1,0 +1,29 @@
+body{
+    padding: 50px;
+    font-size: larger;
+    text-align: center;
+    cursor: pointer;
+}
+.container{
+    margin: auto;
+    max-width:50%;
+    padding: 50px;
+    box-shadow: rgb(143, 135, 135);
+    background-color: bisque;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+.form{
+    font-size: large;
+    size: 1.5em;
+}
+button{
+    color: burlywood;
+    cursor: pointer;
+}
+input{
+    text-align: center;
+    border-radius: 4px;
+}
+
