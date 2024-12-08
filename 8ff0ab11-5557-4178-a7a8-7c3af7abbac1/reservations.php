@@ -21,7 +21,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="index.php" class="nav-link active" aria-current="page">
           Home
         </a>
       </li>
@@ -47,6 +47,6 @@
       </li>
     </ul>
   </div>
-  etc
+  reservations
 </main>
 <?php include('../templates/tail.html'); ?>
