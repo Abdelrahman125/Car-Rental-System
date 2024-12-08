@@ -38,7 +38,7 @@
     $Email = $_POST["email"];
     $First_Name = $_POST["firstname"];
     $Last_Name = $_POST["lastname"];
-    $Password = $_POST["password"];
+    $Password = MD5($_POST["password"]);
     $Confirm_Password = $_POST["confirm-password"];
     $Error_count = 0;
     if(empty($Email) OR empty($First_Name) OR empty($Last_Name) OR empty($Password) OR empty($Confirm_Password)){

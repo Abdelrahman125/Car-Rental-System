@@ -33,7 +33,7 @@ $Passwword = $_POST["password"];
     $valuee = mysqli_query($sql_connection, $sql_attributess);
     $user = mysqli_fetch_array($valuee, MYSQLI_ASSOC);
     if($user){
-        if($Passwword == $user["password"]){
+        if(MD5($Passwword) == MD5($user["password"])){
             $_SESSION["email"] =$Emaill; 
             header("location: index.php");
         }else{

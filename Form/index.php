@@ -1,12 +1,18 @@
 
 <?php
-session_start();
+    if(isset($_SESSION['email'])){
+
     require_once "db.php";
     $email = $_SESSION["email"];
     $result = mysqli_query($sql_connection, "SELECT * FROM registerinfo WHERE email = '$email' ");
     $row = mysqli_fetch_assoc($result);
     $_SESSION["firstname"] = $row["firstname"];
     $_SESSION["lastname"] = $row["lastname"];
+    }else{
+        header('Location: login.php');
+    }
+    
+    
     //echo "<h1>Welcome ".$_SESSION["firstname"]." ".$_SESSION["lastname"]."!! </hr>";
     ?>
     <!DOCTYPE html>
