@@ -47,8 +47,42 @@
       </li>
     </ul>
   </div>
-  <div>
-   
+  <div style="width:100%;">
+  <form action="uploadController.php" style="margin-left:  38%; margin-top:10%;" id="carform" method="post">  
+    <div class="custom-file">
+      <input type="text" placeholder="Plate ID" name="pltid">
+      <br>
+      <br>
+      <input type="text" placeholder="Model" name="model">
+      <br>
+      <br>
+      <input type="text" placeholder="price" name="price">
+      <br>
+      <br>
+      <input type="text" placeholder="type" name="type">
+      <br>
+      <br>
+      <input type="text" placeholder="name" name="name">
+      <br>
+      <br>
+      <input type="text" placeholder="Year" name="year">
+      <br>
+      <br>
+      <select form="carform" name>
+        <option>Office</option>
+        <option>test</option>
+        <option>test</option>
+        <option>test</option>
+        <option>test</option>
+      </select>
+      <br>
+      <br>
+      <label class="custom-file-label" for="customFile">Upload car image</label>
+      <input type="file" class="custom-file-input" id="customFile" name="customeFile">
+      <br>
+      <input type="submit" value="submit">
+    </div>
+  </form>
   </div>
 </main>
 <?php include('../templates/tail.html'); ?>

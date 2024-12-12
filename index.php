@@ -15,7 +15,7 @@
       <nav class="navigation">
         <a href="#services">Rent a car </a>
         <a href="#services">Car rental </a>
-        <a href="#">Log in</a>
+        <a href="login.php">Log in</a>
         </nav>
      </header>   
        
