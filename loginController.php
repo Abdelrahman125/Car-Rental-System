@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    
     $servername = "localhost";
     $username = "root";
     $password = ""; 
@@ -24,7 +22,8 @@
             $stmt->bind_result($id, $passdb);
             $stmt->fetch();
             if (password_verify($pass, $passdb)) {
-                $_SESSION['Customer_ID'] = $id;
+                session_start();
+                $_SESSION['CID'] = $id;
                 header('Location: index.php');
             } else {
                 echo "Invalid password.";

@@ -3,8 +3,9 @@
     $sql = $connect->prepare("SELECT * FROM car WHERE Plate_ID = :id");
     $sql-> bindParam(':id',$_GET['id']);
     $sql->execute();
-    $car = $sql->fetch(PDO::FETCH_ASSOC);
+    $car = $sql->fetch(PDO::FETCH_OBJ);
     include('templates/head.html');
+    session_start();
 ?>
 
     <section class="my-5 py-5" >
@@ -14,25 +15,10 @@
         </div>
         <div class="mx-auto container">
             <form id="checkout-form" method="POST" action="place_order.php">
+                <?php echo $_SESSION['CID']; ?>
                 <div class="form-group checkout-small-element" >
-                    <label>Name</label>
+                    <label>Pickup Date</label>
                     <input type="text" class="form-control" id="checkout-name" name="name" placeholder="name" required>
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label>Email</label>
-                    <input type="text" class="form-control" id="checkout-email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label>Phone</label>
-                    <input type="tel" class="form-control" id="checkout-password" name="phone" placeholder="Phone" required>
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label>City</label>
-                    <input type="text" class="form-control" id="checkout-city" name="city" placeholder="City" required>
-                </div>
-                <div class="form-group checkout-large-element">
-                    <label>Address</label>
-                    <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required>
                 </div>
                 <div class="form-group checkout-btn-container">
                     <input type="submit" class="btn" id="checkout-btn" name="Place_order" value="Place Order ">
