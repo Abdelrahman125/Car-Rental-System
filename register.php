@@ -13,7 +13,7 @@
             <h2>Registration of new members</h2>
               <form action="RegisterController.php" method="post">
                 <div class="falid">
-                <input type="text" name="username" required placeholder="Enter Name">       
+                <input type="text" name="name" required placeholder="Enter Full Name">       
             
                </div>
 

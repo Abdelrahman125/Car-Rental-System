@@ -13,8 +13,8 @@
     <header>
      <a href="#" class="logo">The crazy car</a>
       <nav class="navigation">
-        <a href="#services">Rent a car </a>
-        <a href="#services">Car rental </a>
+        <a href="Search.php">Rent a car </a>
+        <a href="Search.php">Car rental </a>
         <a href="login.php">Log in</a>
         </nav>
      </header>   
