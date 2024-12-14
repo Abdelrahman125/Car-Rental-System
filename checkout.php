@@ -1,11 +1,6 @@
 <?php 
-    $connect =new PDO("mysql:host=localhost;dbname=if0_37067887_crs",'root','');
-    $sql = $connect->prepare("SELECT * FROM car WHERE Plate_ID = :id");
-    $sql-> bindParam(':id',$_GET['id']);
-    $sql->execute();
-    $car = $sql->fetch(PDO::FETCH_OBJ);
-    include('templates/head.html');
     session_start();
+    include('templates/head.html');
 ?>
 
     <section class="my-5 py-5" >
@@ -14,15 +9,24 @@
             <hr class="mx-auto" >
         </div>
         <div class="mx-auto container">
-            <form id="checkout-form" method="POST" action="place_order.php">
-                <?php echo $_SESSION['CID']; ?>
+            <form id="checkout-form" method="POST" action="CheckoutController.php">
                 <div class="form-group checkout-small-element" >
                     <label>Pickup Date</label>
-                    <input type="text" class="form-control" id="checkout-name" name="name" placeholder="name" required>
+                    <input type="date" class="form-control" id="checkout-name" name="pickup" placeholder="name" required>
+                    <label>Return Date</label>
+                    <input type="date" class="form-control" id="checkout-name" name="return" placeholder="name" required>
+                    <label>Payment Method</label>
+                    <select>
+                        <option>cash</option>
+                        <option>credit card</option>
+                    </select>
+                    <input type="hidden" value="<?php echo $_POST['pltid']?>" name="pltid">
+                    <input type="hidden" value="<?php echo $_SESSION['CID']?>" name="cid">
+                    <input type="hidden" value="<?php echo $_POST['amount']?>" name="amount">
                 </div>
-                <div class="form-group checkout-btn-container">
-                    <input type="submit" class="btn" id="checkout-btn" name="Place_order" value="Place Order ">
-                </div>
+                    <div class="form-group checkout-btn-container">
+                        <input type="submit" class="btn text-white bg-primary" id="checkout-btn" name="Place_order" value="Place Order ">
+                    </div>
             </form>
         </div>
     </section>

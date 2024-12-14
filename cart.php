@@ -48,6 +48,7 @@
         <div class="checkout-container">
             <form method="POST" action="checkout.php" >
                 <input type="hidden" name="pltid" value="<?php echo $_GET['id'] ?>">
+                <input type="hidden" value="<?php echo $car['price']?>" name="amount">
                 <input type="submit" class="btn primary bg-primary checkout-btn" value="Checkout" name="checkout" >
             </form>
         </div>

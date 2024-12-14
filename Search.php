@@ -62,8 +62,8 @@ if(isset($_POST["submit"])){
 }
   if(isset($_POST["submit2"])){ 
     $srchpr = $_POST["price"];
-    $srchpr_r = $srchpr+100000;
-    $srchpr_l = $srchpr-100000;
+    $srchpr_r = $srchpr+1000;
+    $srchpr_l = $srchpr-1000;
     $sqll2 = $connect->prepare("SELECT * FROM `car` WHERE price between '$srchpr_l' and '$srchpr_r'");
     $sqll2->setFetchMode(PDO:: FETCH_OBJ);
     $sqll2->execute();
