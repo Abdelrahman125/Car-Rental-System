@@ -16,9 +16,9 @@
                     <label>Return Date</label>
                     <input type="date" class="form-control" id="checkout-name" name="return" placeholder="name" required>
                     <label>Payment Method</label>
-                    <select>
-                        <option>cash</option>
-                        <option>credit card</option>
+                    <select name="pymntmthd">
+                        <option value="cash">cash</option>
+                        <option value="credit card">credit card</option>
                     </select>
                     <input type="hidden" value="<?php echo $_POST['pltid']?>" name="pltid">
                     <input type="hidden" value="<?php echo $_SESSION['CID']?>" name="cid">
