@@ -8,7 +8,10 @@
     }
 ?>
 <style>
-  
+    input{
+      border-radius: 5px;
+      padding: 10px;
+    }
     .sidebar{
         height:1000px;
     }
@@ -69,16 +72,18 @@
       <br>
       <br>
       <select form="carform" name>
-        <option>Office</option>
-        <option>test</option>
-        <option>test</option>
-        <option>test</option>
-        <option>test</option>
+        <?php 
+         $connect =new PDO("mysql:host=localhost;dbname=if0_37067887_crs",'root','');
+         $sql = $connect->prepare("SELECT * FROM office");
+         $sql->setFetchMode(PDO:: FETCH_OBJ);
+         $sql->execute();
+         $offices = $sql->fetchAll(PDO:: FETCH_OBJ);
+                foreach ($offices as $office) { 
+                    echo "<option value='".$office->Office_ID."'>".$office->Location."</option>";
+                }      
+        ?>
       </select>
       <br>
-      <br>
-      <label class="custom-file-label" for="customFile">Upload car image</label>
-      <input type="file" class="custom-file-input" id="customFile" name="customeFile">
       <br>
       <input type="submit" value="submit">
     </div>

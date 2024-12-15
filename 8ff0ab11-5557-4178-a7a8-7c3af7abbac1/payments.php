@@ -64,7 +64,6 @@
               <th scope="col">Reservation_ID</th>
               <th scope="col">Payment Method</th>
               <th scope="col">Amount</th>
-              <th scope="col">Payment Date</th>
             </tr>
           </thead>
           <tbody>
@@ -76,7 +75,6 @@
                     <td>".$row['Reservation_ID']."</td>
                     <td>".$row['PaymentMethod']."</td>
                     <td>".$row['Amount']."</td>
-                    <td>".$row['PaymentDate']."</td>
                   </tr>";
                 }
               }

@@ -63,7 +63,6 @@
               <th scope="col">Customer_ID</th>
               <th scope="col">Name</th>
               <th scope="col">PhoneNo</th>
-              <th scope="col">Birthdate</th>
               <th scope="col">Email</th>
             </tr>
           </thead>
@@ -74,7 +73,6 @@
                     <td>".$row['Customer_ID']."</td>
                     <td>".$row['Name']."</td>
                     <td>".$row['PhoneNO']."</td>
-                    <td>".$row['Birthdate']."</td>
                     <td>".$row['Email']."</td>
                   </tr>";
                 }
